@@ -85,23 +85,36 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-header,
-.fh5co-cover {
-  background-color: transparent;
+.fh5co-cover 
+  { 
+    width: auto;
+    height: 100%;
+   
+    background-size: cover;
+    top: -50px;
+    background: url(images/user-3.jpg);
+    background-position: center center; 
+  }
+   /* background-color: transparent; 
   background-size: cover;
-  background-attachment: fixed;
   position: relative;
-  height: 600px;
+  height: 600px; 
+  width: 100%; */
+
+
+/* #fh5co-header .overlay,
+.fh5co-cover .overlay
+ { 
   width: 100%;
-}
-#fh5co-header .overlay,
-.fh5co-cover .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 255, 47, 0.9);
-}
+  height: 100vh;
+ 
+  background-size: cover;
+  position: relative;
+
+  background: url(images/user-3.jpg);
+  background-position: top center; 
+} */
+
 #fh5co-header .display-t,
 .fh5co-cover .display-t {
   width: 100%;
@@ -286,7 +299,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-blog,
 #fh5co-pricing,
 #fh5co-contact {
-  padding: 7em 0;
+   padding-top: 7em ; 
   clear: both;
 }
 @media screen and (max-width: 768px) {
@@ -298,7 +311,7 @@ h1, h2, h3, h4, h5, h6, figure {
   #fh5co-blog,
   #fh5co-pricing,
   #fh5co-contact {
-    padding: 3em 0;
+    padding-top: 3em ;
   }
 }
 
