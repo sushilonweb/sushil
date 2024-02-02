@@ -205,6 +205,7 @@ figure {
 #fh5co-header .display-tc h3,
 .fh5co-cover .display-tc h3 {
   font-size: 16px;
+  margin-top: 10rem;
 }
 @media screen and (max-width: 768px) {
   #fh5co-header .display-tc h3,
