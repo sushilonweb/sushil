@@ -51,7 +51,7 @@ body {
 }
 
 a {
-  color: #ff9000;
+  color: #43403b;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -59,7 +59,7 @@ a {
 a:hover,
 a:active,
 a:focus {
-  color: #ff9000;
+  color: #5d4321;
   outline: none;
   text-decoration: none;
 }
@@ -83,17 +83,17 @@ figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #ff9000;
+  background: #6f6456;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #ff9000;
+  background: #302e2c;
 }
 
 ::selection {
   color: #fff;
-  background: #ff9000;
+  background: #4a4136;
 }
 
 #fh5co-header,
@@ -238,7 +238,7 @@ figure {
 }
 
 #fh5co-features {
-  background: #ff9000;
+  background: #383735;
 }
 #fh5co-features h2 {
   color: #fff;
@@ -273,7 +273,7 @@ figure {
   display: table-cell;
   vertical-align: middle;
   height: 100px;
-  color: #ff9000 !important;
+  color: #5d2727 !important;
 }
 #fh5co-features .feature-left .feature-copy {
   width: 100%;
@@ -324,7 +324,7 @@ figure {
 
 .fh5co-bg-dark {
   background: #2f3c4f;
-  background: #ff9000;
+  background: #624f36;
 }
 .fh5co-bg-dark .fh5co-heading h2 {
   color: #fff !important;
@@ -394,7 +394,7 @@ figure {
   display: inline-block;
   zoom: 1;
   display: inline;
-  color: #ff9000;
+  color: #32302d;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -431,7 +431,7 @@ figure {
   font-size: 20px;
 }
 #fh5co-about .fh5co-social-icons li a:hover {
-  background: #ff9000;
+  background: #140e06;
 }
 
 .fh5co-heading {
@@ -562,7 +562,7 @@ figure {
   top: 40px;
   left: 50%;
   margin-left: -21px;
-  background-color: #ff9000;
+  background-color: #3d3a35;
   z-index: 100;
   display: table;
   -webkit-border-radius: 50%;
