@@ -78,6 +78,9 @@
   </head>
 
   <body>
+   
+
+
     <div class="fh5co-loader"></div>
     <div id="page">
       <header
@@ -244,23 +247,100 @@
           </div>
         </div>
       </div>
+      </div>
+      <div> </div>
+      <div>
+     <!-- Map Section -->
+<section id="contact-map" class="fh5co-bg-color" style="padding: 50px 0;">
+  <div class="container text-center">
+    <h2 class="section-title" style="margin-bottom: 40px;">📍 Find Me on the Map</h2>
+    
+    <!-- Google Map Embed -->
+    <div style=" width: 100%; height: 400px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.0522672870656!2d85.31878521506105!3d27.708955982792197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb190fcf7ecf23%3A0xc34ef0e60c34a38!2sKathmandu%20Durbar%20Square!5e0!3m2!1sen!2snp!4v1624034843768!5m2!1sen!2snp"
+        width="100%"
+        height="100%"
+        frameborder="0"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+      </div>
       <div id="fh5co-started" class="fh5co-bg-dark">
         <div class="overlay"></div>
         <div class="container">
           <div class="row animate-box">
             <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
               <h2>GET CONNECTED</h2>
-              <p>Drop a mail and we'll start a conversation</p>
+              <!-- <p>Drop a mail and we'll start a conversation</p>
               <p>
                 <a
                   href="mailto:inquiry@shushilpathak.com.np"
                   class="btn btn-default btn-lg"
-                  >Contact Me</a
-                >
-              </p>
+                  >Contact Me</a>
+              </p> -->
             </div>
           </div>
         </div>
+         <div class="contact-info">
+              <form id="contact-info">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <input
+                      type="text"
+                      name="entry.2005620554"
+                      class="form-control"
+                      placeholder="Your Name"
+                      required
+                    />
+                  </div>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="entry.1045781291"
+                      placeholder="Your Email"
+                      required
+                      id="email-input"
+                    />
+                    <div id="email-validation-error" class="text-danger"></div>
+                  </div>
+                </div>
+                <div class="form-group mt-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="entry.1166974658"
+                    placeholder="Subject"
+                    required
+                  />
+                </div>
+                <div class="form-group mt-3">
+                  <textarea
+                    class="form-control"
+                    name="entry.839337160"
+                    rows="5"
+                    placeholder="Message"
+                    required
+                  ></textarea>
+                </div>
+
+                <div class="hello">
+                  <button type="submit" id="submit-button">Send Message</button>
+                </div>
+              </form>
+
+              <div id="alert-container" style="margin-top: 1rem"></div>
+            </div>
+          </div>
+        </div>
+      </section>
       </div>
       <div id="fh5co-footer">
         <div class="container">
