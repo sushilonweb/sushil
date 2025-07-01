@@ -276,7 +276,7 @@
 
 <div class="contact-form-container">
   <div class="contact-info">
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;"></form>
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
       <div class="row">
         <div class="col-md-6 form-group">
           <input
@@ -317,11 +317,12 @@
           required
         ></textarea>
       </div>
-
       <div class="hello">
         <button type="submit" id="submit-button">Send Message</button>
       </div>
     </form>
+
+    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('Thanks for your submission!');"></iframe>
 
     <div id="alert-container" style="margin-top: 1rem"></div>
   </div>
