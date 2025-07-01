@@ -1029,22 +1029,24 @@ figure {
 
 /* Container styling */
 .contact-info {
-  max-width: 700px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto 50px auto;
-  padding: 30px 20px;
+  padding: 40px;
   background-color: #f7f9fc;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1);
   font-family: Arial, sans-serif;
   color: #333;
+  box-sizing: border-box;
 }
 
-/* Form groups with margin */
+/* Form element spacing */
 .form-group {
   margin-bottom: 20px;
 }
 
-/* Input and textarea styling */
+/* Inputs and textarea full-width */
 .form-control {
   width: 100%;
   padding: 12px 15px;
@@ -1061,20 +1063,20 @@ figure {
   background-color: #fff;
 }
 
-/* Error message */
+/* Error messages */
 .text-danger {
   color: #dc3545;
   font-size: 14px;
   margin-top: 5px;
 }
 
-/* Submit button wrapper */
+/* Button alignment */
 .hello {
   text-align: center;
   margin-top: 25px;
 }
 
-/* Submit button styles */
+/* Submit button styling */
 #submit-button {
   background-color: #007bff;
   color: white;
@@ -1091,12 +1093,18 @@ figure {
   background-color: #0056b3;
 }
 
-/* Responsive tweaks */
+/* Mobile view adjustments */
 @media (max-width: 768px) {
   .contact-info {
-    padding: 20px 15px;
+    padding: 20px;
+    width: 95%;
+  }
+
+  #submit-button {
+    width: 100%;
   }
 }
+
 
  
   .center-heading {
