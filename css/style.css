@@ -1090,7 +1090,7 @@ figure {
 }
 
 #submit-button:hover {
-  background-color: #0056b3;
+  background-color: #3f4142;
 }
 
 /* Mobile view adjustments */
@@ -1110,7 +1110,7 @@ figure {
     width: 16px;
     height: 16px;
     border: 3px solid #fff;
-    border-top: 3px solid #007bff;
+    border-top: 3px solid #272424;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
     margin-left: 10px;
