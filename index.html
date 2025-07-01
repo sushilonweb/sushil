@@ -276,7 +276,7 @@
 
 <div class="contact-form-container">
   <div class="contact-info">
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit();">
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit();">
 
       <div class="row">
         <div class="col-md-6 form-group">
@@ -319,7 +319,7 @@
         ></textarea>
       </div>
       <div class="hello">
-        <button type="submit" id="submit-button">Send Message<span id="submit-spinner"></span></button>
+        <button type="submit" id="submit-button">Send Message<span id="submit-spinner" style="display: none;"></span></button>
       </div>
     </form>
 
@@ -363,16 +363,21 @@
       <!-- Main -->
       <script src="js/main.js"></script>
     </div>
-    <script>
+  <script>
   let submitted = false;
 
   function handleSubmit() {
     submitted = true;
+    
     const btn = document.getElementById("submit-button");
     const spinner = document.getElementById("submit-spinner");
+
     btn.disabled = true;
-    btn.innerText = "Sending";
+    btn.innerText = ""; // clear text so spinner + new label fits
     spinner.style.display = "inline-block";
+    spinner.innerText = "Sending...";
+
+    return true; // IMPORTANT: allow form to submit
   }
 
   function showThankYou() {
@@ -383,12 +388,16 @@
       spinner.style.display = "none";
       btn.innerText = "Message Sent!";
 
+      // Reset button after 3 seconds
       setTimeout(() => {
         btn.disabled = false;
         btn.innerText = "Send Message";
       }, 3000);
+
+      submitted = false; // reset for next submission
     }
   }
+
 </script>
 
   </body>
