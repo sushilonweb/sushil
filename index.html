@@ -319,7 +319,11 @@
         ></textarea>
       </div>
       <div class="hello">
-        <button type="submit" id="submit-button">Send Message<span id="submit-spinner" style="display: none;"></span></button>
+       <button type="submit" id="submit-button">
+  <span id="submit-spinner" style="display: none; margin-right: 5px;">🔄</span>
+  <span id="submit-label">Send Message</span>
+</button>
+
       </div>
     </form>
 
@@ -368,35 +372,35 @@
 
   function handleSubmit() {
     submitted = true;
-    
+
     const btn = document.getElementById("submit-button");
     const spinner = document.getElementById("submit-spinner");
+    const label = document.getElementById("submit-label");
 
     btn.disabled = true;
-    btn.innerText = ""; // clear text so spinner + new label fits
     spinner.style.display = "inline-block";
-    spinner.innerText = "Sending...";
+    label.innerText = "Sending...";
 
-    return true; // IMPORTANT: allow form to submit
+    return true; // allows form to submit
   }
 
   function showThankYou() {
     if (submitted) {
-      const btn = document.getElementById("submit-button");
       const spinner = document.getElementById("submit-spinner");
+      const label = document.getElementById("submit-label");
+      const btn = document.getElementById("submit-button");
 
       spinner.style.display = "none";
-      btn.innerText = "Message Sent!";
+      label.innerText = "Message Sent!";
 
-      // Reset button after 3 seconds
       setTimeout(() => {
         btn.disabled = false;
-        btn.innerText = "Send Message";
+        label.innerText = "Send Message";
       }, 3000);
 
-      submitted = false; // reset for next submission
+      submitted = false;
     }
-  }
+  }       
 
 </script>
 
