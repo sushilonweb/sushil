@@ -276,7 +276,8 @@
 
 <div class="contact-form-container">
   <div class="contact-info">
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
+    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse" method="POST" target="hidden_iframe" onsubmit="handleSubmit();">
+
       <div class="row">
         <div class="col-md-6 form-group">
           <input
@@ -318,7 +319,7 @@
         ></textarea>
       </div>
       <div class="hello">
-        <button type="submit" id="submit-button">Send Message</button>
+        <button type="submit" id="submit-button">Send Message<span id="submit-spinner"></span></button>
       </div>
     </form>
 
@@ -362,5 +363,33 @@
       <!-- Main -->
       <script src="js/main.js"></script>
     </div>
+    <script>
+  let submitted = false;
+
+  function handleSubmit() {
+    submitted = true;
+    const btn = document.getElementById("submit-button");
+    const spinner = document.getElementById("submit-spinner");
+    btn.disabled = true;
+    btn.innerText = "Sending";
+    spinner.style.display = "inline-block";
+  }
+
+  function showThankYou() {
+    if (submitted) {
+      const btn = document.getElementById("submit-button");
+      const spinner = document.getElementById("submit-spinner");
+
+      spinner.style.display = "none";
+      btn.innerText = "Message Sent!";
+
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerText = "Send Message";
+      }, 3000);
+    }
+  }
+</script>
+
   </body>
 </html>
