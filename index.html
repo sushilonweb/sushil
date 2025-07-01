@@ -67,6 +67,9 @@
       href="https://fonts.googleapis.com/css?family=Kaushan+Script"
       rel="stylesheet"
     />
+    <!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css" />
     <!-- Icomoon Icon Fonts-->
@@ -75,6 +78,8 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
   </head>
 
   <body>
@@ -128,9 +133,10 @@
                         <li>
                           <a
                             href="https://twitter.com/Sushil__world"
-                            target="_blank"
-                            ><i class="icon-twitter2"></i
-                          ></a>
+                            target="_blank">
+                         <i class="fa-brands fa-x-twitter"></i>
+
+                          </a>
                         </li>
                         <li>
                           <a
@@ -374,40 +380,7 @@
   </div>
 </div>
 
-<script>
-  let submitted = false;
-
-  function handleSubmit() {
-    submitted = true;
-
-    const button = document.getElementById("submit-button");
-    const spinner = document.getElementById("submit-spinner");
-    const label = document.getElementById("submit-label");
-
-    button.disabled = true;
-    spinner.style.display = "inline-block";
-    label.innerText = "Sending...";
-
-    return true; // allow form submission
-  }
-
-  function showThankYou() {
-    if (submitted) {
-      const button = document.getElementById("submit-button");
-      const spinner = document.getElementById("submit-spinner");
-      const label = document.getElementById("submit-label");
-
-      spinner.style.display = "none";
-      label.innerText = "Message Sent!";
-
-      setTimeout(() => {
-        label.innerText = "Send Message";
-        button.disabled = false;
-        submitted = false;
-      }, 3000);
-    }
-  }
-</script>
+<!-- Removed duplicate script block to fix redeclaration error -->
 
 
 
@@ -446,40 +419,31 @@
       <!-- Main -->
       <script src="js/main.js"></script>
     </div>
+ 
   <script>
-  let submitted = false;
-
   function handleSubmit() {
-    submitted = true;
-
-    const btn = document.getElementById("submit-button");
-    const spinner = document.getElementById("submit-spinner");
-    const label = document.getElementById("submit-label");
-
-    btn.disabled = true;
-    spinner.style.display = "inline-block";
-    label.innerText = "Sending...";
-
-    return true; // allows form to submit
+    document.getElementById('submit-spinner').style.display = 'inline-block';
+    document.getElementById('submit-label').textContent = 'Sending...';
+    return true; // Allow the form to submit
   }
 
   function showThankYou() {
-    if (submitted) {
-      const spinner = document.getElementById("submit-spinner");
-      const label = document.getElementById("submit-label");
-      const btn = document.getElementById("submit-button");
+    // Hide spinner
+    document.getElementById('submit-spinner').style.display = 'none';
+    document.getElementById('submit-label').textContent = 'Send Message';
 
-      spinner.style.display = "none";
-      label.innerText = "Message Sent!";
+    // Reset the form
+    document.querySelector('form').reset();
 
-      setTimeout(() => {
-        btn.disabled = false;
-        label.innerText = "Send Message";
-      }, 3000);
-
-      submitted = false;
-    }
-  }       
+    // Show SweetAlert2 popup
+    Swal.fire({
+      title: 'Thank You!',
+      text: 'Your message has been sent successfully.',
+      icon: 'success',
+      confirmButtonText: 'OK',
+      confirmButtonColor: '#28a745'
+    });
+  }
 
 </script>
 
