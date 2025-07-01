@@ -274,9 +274,49 @@
       </div> -->
    <h2 class="center-heading" style="margin-top: 50px;">CONTACT ME</h2>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Form</title>
+  <style>
+    .form-control {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .hello {
+      margin-top: 15px;
+    }
+
+    #submit-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #submit-spinner {
+      display: none;
+      margin-right: 5px;
+    }
+
+    .text-danger {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
 <div class="contact-form-container">
   <div class="contact-info">
-    <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse" method="POST" target="hidden_iframe" onsubmit="return handleSubmit();">
+    <form 
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfu94mLAbhdzwtYpCGn5H-5hCZ5klRLTkgnl_bz_QeCql5GEA/formResponse"
+      method="POST"
+      target="hidden_iframe"
+      onsubmit="return handleSubmit();"
+    >
 
       <div class="row">
         <div class="col-md-6 form-group">
@@ -300,6 +340,7 @@
           <div id="email-validation-error" class="text-danger"></div>
         </div>
       </div>
+
       <div class="form-group mt-3">
         <input
           type="text"
@@ -309,6 +350,7 @@
           required
         />
       </div>
+
       <div class="form-group mt-3">
         <textarea
           class="form-control"
@@ -318,20 +360,57 @@
           required
         ></textarea>
       </div>
-      <div class="hello">
-       <button type="submit" id="submit-button">
-  <span id="submit-spinner" style="display: none; margin-right: 5px;">🔄</span>
-  <span id="submit-label">Send Message</span>
-</button>
 
+      <div class="hello">
+        <button type="submit" id="submit-button">
+          <span id="submit-spinner">🔄</span>
+          <span id="submit-label">Send Message</span>
+        </button>
       </div>
     </form>
 
-    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) alert('Thanks for your submission!');"></iframe>
-
+    <iframe name="hidden_iframe" style="display:none;" onload="showThankYou();"></iframe>
     <div id="alert-container" style="margin-top: 1rem"></div>
   </div>
 </div>
+
+<script>
+  let submitted = false;
+
+  function handleSubmit() {
+    submitted = true;
+
+    const button = document.getElementById("submit-button");
+    const spinner = document.getElementById("submit-spinner");
+    const label = document.getElementById("submit-label");
+
+    button.disabled = true;
+    spinner.style.display = "inline-block";
+    label.innerText = "Sending...";
+
+    return true; // allow form submission
+  }
+
+  function showThankYou() {
+    if (submitted) {
+      const button = document.getElementById("submit-button");
+      const spinner = document.getElementById("submit-spinner");
+      const label = document.getElementById("submit-label");
+
+      spinner.style.display = "none";
+      label.innerText = "Message Sent!";
+
+      setTimeout(() => {
+        label.innerText = "Send Message";
+        button.disabled = false;
+        submitted = false;
+      }, 3000);
+    }
+  }
+</script>
+
+
+
 
       <div id="fh5co-footer">
         <div class="container">
